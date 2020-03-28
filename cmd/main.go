@@ -18,15 +18,29 @@ func main() {
 func run() error {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", handler)
+	r.HandleFunc("/", home)
+	r.HandleFunc("/contact", contact)
 	http.ListenAndServe(":8888", r)
 	return nil
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	if r.URL.Path == "/" {
-		fmt.Fprint(w, "<h1>Welcome to the jungle!</h1>")
+		fmt.Fprint(w, "<h1>Welcome to the Index!</h1>")
+	}
+}
+func contact(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	if r.URL.Path == "/contact" {
+		fmt.Fprint(w, "<h1>Welcome to the Contact!</h1>")
 	}
 
+}
+
+func notFound(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	if r.URL.Path == "/" {
+		fmt.Fprint(w, "<h1>Not all who wander are lost. But you are. 404</h1>")
+	}
 }
