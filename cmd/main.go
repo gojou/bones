@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 
+	//	"github.com/gojou/bones/pkg/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -15,14 +16,14 @@ func main() {
 	}
 }
 
-func run() error {
+func run() (e error) {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
 	r.NotFoundHandler = http.HandlerFunc(notFound)
 	http.ListenAndServe(":8888", r)
-	return nil
+	return e
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
