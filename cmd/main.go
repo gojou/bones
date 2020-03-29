@@ -20,6 +20,7 @@ func run() error {
 
 	r.HandleFunc("/", home)
 	r.HandleFunc("/contact", contact)
+	r.NotFoundHandler = http.HandlerFunc(notFound)
 	http.ListenAndServe(":8888", r)
 	return nil
 }
@@ -40,7 +41,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
 func notFound(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	if r.URL.Path == "/" {
-		fmt.Fprint(w, "<h1>Not all who wander are lost. But you are. 404</h1>")
-	}
+	w.WriteHeader(http.StatusNotFound)
+	fmt.Fprint(w, "<h1>Not all who wander are lost. But you are. 404</h1>")
+
 }
