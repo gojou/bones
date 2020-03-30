@@ -10,7 +10,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 	page := template.Must(template.ParseFiles(
 		"static/html/_base.html",
-		"static/html/index.html",
+		"static/html/home.html",
 	))
 
 	xecute(page, w, r)

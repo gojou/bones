@@ -9,7 +9,7 @@ import (
 func NotFound(w http.ResponseWriter, r *http.Request) {
 	page := template.Must(template.ParseFiles(
 		"static/html/_base.html",
-		"static/html/404.html",
+		"static/html/notfound.html",
 	))
 	w.WriteHeader(http.StatusNotFound)
 	xecute(page, w, r)
