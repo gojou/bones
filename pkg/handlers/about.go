@@ -12,9 +12,6 @@ func About(w http.ResponseWriter, r *http.Request) {
 		"static/html/about.html",
 	))
 
-	if r.Method == "GET" {
-		page.Execute(w, nil)
-		//	return
-	}
+	xecute(page, w, r)
 
 }

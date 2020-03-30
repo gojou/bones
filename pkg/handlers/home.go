@@ -13,9 +13,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		"static/html/index.html",
 	))
 
-	if r.Method == "GET" {
-		page.Execute(w, nil)
-		//	return
-	}
+	xecute(page, w, r)
 
 }
