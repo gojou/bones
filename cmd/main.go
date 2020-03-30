@@ -19,7 +19,7 @@ func main() {
 
 func run() error {
 	r := mux.NewRouter()
-	routes(r)
+	routing(r)
 
 	// Critical to work on AppEngine
 	port := os.Getenv("PORT")

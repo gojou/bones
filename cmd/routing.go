@@ -7,7 +7,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func routes(r *mux.Router) {
+func routing(r *mux.Router) {
 	r.HandleFunc("/", handlers.Home)
 	r.HandleFunc("/contact", handlers.Contact)
 	r.HandleFunc("/about", handlers.About)
