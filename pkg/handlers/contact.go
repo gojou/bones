@@ -1,14 +1,20 @@
 package handlers
 
 import (
-	"fmt"
+	"html/template"
 	"net/http"
 )
 
 //Contact displays the contact page
 func Contact(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "text/html")
-	if r.URL.Path == "/contact" {
-		fmt.Fprint(w, "<h1>Welcome to the Contact!</h1>")
+	page := template.Must(template.ParseFiles(
+		"static/html/_base.html",
+		"static/html/contact.html",
+	))
+
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+		//	return
 	}
+
 }
