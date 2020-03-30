@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-//About displays the contact page
+//About displays the "About" page
 func About(w http.ResponseWriter, r *http.Request) {
 	page := template.Must(template.ParseFiles(
 		"static/html/_base.html",

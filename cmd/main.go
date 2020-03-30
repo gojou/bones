@@ -17,7 +17,7 @@ func main() {
 	}
 }
 
-func run() (e error) {
+func run() error {
 	r := mux.NewRouter()
 	routes(r)
 
@@ -27,6 +27,7 @@ func run() (e error) {
 		port = "8080"
 		log.Printf("Defaulting to port %s", port)
 	}
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
-	return e
+
+	return (http.ListenAndServe(fmt.Sprintf(":%s", port), r))
+
 }
