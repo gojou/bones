@@ -12,6 +12,6 @@ func About(w http.ResponseWriter, r *http.Request) {
 		"static/html/about.html",
 	))
 
-	xecute(page, w, r)
+	page.Execute(w, nil)
 
 }

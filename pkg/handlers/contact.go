@@ -12,6 +12,6 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 		"static/html/contact.html",
 	))
 
-	xecute(page, w, r)
+	page.Execute(w, nil)
 
 }

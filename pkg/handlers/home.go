@@ -13,6 +13,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		"static/html/home.html",
 	))
 
-	xecute(page, w, r)
+	page.Execute(w, nil)
 
 }
