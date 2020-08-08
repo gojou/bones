@@ -19,6 +19,7 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 //ContactAdd displays the addcontact page
 func ContactAdd(w http.ResponseWriter, r *http.Request) {
 	page := template.Must(template.ParseFiles(
+
 		"static/html/_base.html",
 		"static/html/contactadd.html",
 	))
