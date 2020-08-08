@@ -15,3 +15,25 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 	xecute(page, w, r)
 
 }
+
+//ContactAdd displays the addcontact page
+func ContactAdd(w http.ResponseWriter, r *http.Request) {
+	page := template.Must(template.ParseFiles(
+		"static/html/_base.html",
+		"static/html/contact.html",
+	))
+
+	xecute(page, w, r)
+
+}
+
+//ContactList displays the listcontacts page
+func ContactList(w http.ResponseWriter, r *http.Request) {
+	page := template.Must(template.ParseFiles(
+		"static/html/_base.html",
+		"static/html/contact.html",
+	))
+
+	xecute(page, w, r)
+
+}
