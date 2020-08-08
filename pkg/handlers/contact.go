@@ -20,7 +20,7 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 func ContactAdd(w http.ResponseWriter, r *http.Request) {
 	page := template.Must(template.ParseFiles(
 		"static/html/_base.html",
-		"static/html/contact.html",
+		"static/html/contactadd.html",
 	))
 
 	xecute(page, w, r)
@@ -31,7 +31,7 @@ func ContactAdd(w http.ResponseWriter, r *http.Request) {
 func ContactList(w http.ResponseWriter, r *http.Request) {
 	page := template.Must(template.ParseFiles(
 		"static/html/_base.html",
-		"static/html/contact.html",
+		"static/html/contactlist.html",
 	))
 
 	xecute(page, w, r)
