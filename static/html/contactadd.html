@@ -3,16 +3,28 @@
   <h2>Add a Contact to Go Scouting</h2>
   <p>Placeholder for the "ContactAdd" page.</p>
 
-  <form class="" action="" method="post">
+  <form action="" method="post">
     <label for="contactID">Contact ID</label>
     <input type="text" name="contactID" value="" id="contactID" class="form-control">
     <label for="firstname">First Name</label>
     <input type="text" name="firstname" value="" id="firstname" class="form-control">
     <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" value="" id="lastname"class="form-control">
+    <input type="text" name="lastname" value="" id="lastname" class="form-control">
 
+    <div class="form-group">
+
+      <label for="gender">Gender</label>
+      <select class="form-control" name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" id="accept" class="form-check-input">
+      <label for="accept" class="form-check-label">Contact has accpted the terms of conduct &amp; conditions.</label>
+    </div>
   </form>
-
 </div>
 
 {{ end }}
