@@ -17,3 +17,6 @@
 # Mod files
 go.mod
 go.sum
+
+# Workspace file
+bones.code-workspace
