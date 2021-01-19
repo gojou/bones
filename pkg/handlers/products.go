@@ -12,6 +12,8 @@ func Products(w http.ResponseWriter, r *http.Request) {
 		"static/html/products.html",
 	))
 
-	xecute(page, w, r)
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+	}
 
 }

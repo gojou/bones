@@ -12,5 +12,8 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 		"static/html/notfound.html",
 	))
 	w.WriteHeader(http.StatusNotFound)
-	xecute(page, w, r)
+
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+	}
 }

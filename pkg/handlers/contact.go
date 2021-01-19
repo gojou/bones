@@ -12,7 +12,9 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 		"static/html/contact.html",
 	))
 
-	xecute(page, w, r)
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+	}
 
 }
 
@@ -24,7 +26,9 @@ func ContactAdd(w http.ResponseWriter, r *http.Request) {
 		"static/html/contactadd.html",
 	))
 
-	xecute(page, w, r)
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+	}
 
 }
 
@@ -35,6 +39,8 @@ func ContactList(w http.ResponseWriter, r *http.Request) {
 		"static/html/contactlist.html",
 	))
 
-	xecute(page, w, r)
+	if r.Method == "GET" {
+		page.Execute(w, nil)
+	}
 
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Routes provides a map of the api
 func Routes(r *mux.Router) {
 	r.HandleFunc("/", handlers.Home)
 	r.HandleFunc("/contact", handlers.Contact)
