@@ -13,7 +13,6 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 	))
 	w.WriteHeader(http.StatusNotFound)
 
-	if r.Method == "GET" {
-		page.Execute(w, nil)
-	}
+	page.Execute(w, nil)
+
 }
