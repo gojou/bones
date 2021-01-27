@@ -12,13 +12,13 @@ import (
 
 func main() {
 
-	e := run()
+	e := start()
 	if e != nil {
 		log.Fatalf("Fatal error: %v\n", e)
 	}
 }
 
-func run() (e error) {
+func start() (e error) {
 	r := mux.NewRouter()
 	routing.Routes(r)
 
