@@ -13,6 +13,6 @@ func Scout() func(w http.ResponseWriter, r *http.Request) {
 
 		// PICK UP HERE if repo.ConfirmScoutClient
 
-		fmt.Fprintf(w, "This is a test. The request contains: &v\n", *&r.RequestURI)
+		fmt.Fprintf(w, "This is a test. The request contains: %v", *&r.RequestURI)
 	})
 }
